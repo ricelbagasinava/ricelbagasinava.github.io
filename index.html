@@ -10,11 +10,11 @@
         
         .container { max-width: 980px; margin: 0 auto; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 0 0 12px 12px; overflow: hidden; }
         
-        /* HIGH-CONVERTING HERO BANNER SECTION */
+        /* CLEAN HERO BANNER SECTION */
         .hero-banner {
             background: linear-gradient(135deg, #061c38 0%, #0b2a52 60%, #103768 100%);
             color: #ffffff;
-            padding: 45px 35px 50px 35px;
+            padding: 45px 35px 45px 35px;
             position: relative;
             overflow: hidden;
             border-bottom: 3px solid #e5b869;
@@ -45,14 +45,9 @@
         }
 
         .banner-top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .brand-name {
@@ -62,16 +57,6 @@
             text-transform: uppercase;
             color: #e5b869;
         }
-
-        .top-contact-link {
-            color: #d1d5db;
-            font-size: 0.88rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .top-contact-link:hover { color: #ffffff; text-decoration: underline; }
 
         .hero-content {
             max-width: 820px;
@@ -92,34 +77,8 @@
             font-size: 1.05rem;
             line-height: 1.6;
             color: #d1d5db;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
             font-weight: 400;
-        }
-
-        /* TRUST BADGES & KEY OFFERINGS */
-        .trust-pills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .pill {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #f3f4f6;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .pill-gold {
-            background: rgba(229, 184, 105, 0.18);
-            border-color: #e5b869;
-            color: #fef08a;
         }
 
         /* CALL TO ACTION BUTTONS */
@@ -249,25 +208,14 @@
     <div class="hero-banner">
         <div class="banner-top-bar">
             <span class="brand-name">RICEL BAGASINA</span>
-            <a href="mailto:ricel.bagasina.va@gmail.com" class="top-contact-link">
-                ✉️ ricel.bagasina.va@gmail.com
-            </a>
         </div>
 
         <div class="hero-content">
             <h1 class="hero-headline">Accurate Bookkeeping & Financial Support for Growing Small Businesses</h1>
             <p class="hero-subheadline">I help entrepreneurs save time, ensure tax compliance, and gain complete financial clarity so they can focus on growing their business.</p>
-            
-            <div class="trust-pills">
-                <span class="pill pill-gold">✓ QuickBooks Online Certified</span>
-                <span class="pill pill-gold">✓ Xero Advisor Certified</span>
-                <span class="pill pill-gold">✓ TESDA NC III Bookkeeper</span>
-                <span class="pill">Sales & Inventory Reconciliation</span>
-                <span class="pill">Financial Reporting</span>
-            </div>
 
             <div class="cta-group">
-                <a href="mailto:ricel.bagasina.va@gmail.com?subject=Inquiry%20about%20Bookkeeping%20Services" class="btn-primary"> Hire Me / Send Inquiry</a>
+                <a href="mailto:ricel.bagasina.va@gmail.com?subject=Inquiry%20about%20Bookkeeping%20Services" class="btn-primary">Hire Me / Send Inquiry</a>
                 <a href="#services" onclick="openTab('services')" class="btn-secondary">Explore My Services</a>
             </div>
         </div>
@@ -487,7 +435,6 @@
         }
         document.getElementById(tabName).classList.add("active");
         
-        // Match tab button active state
         var tabButtons = document.querySelectorAll('.tab-btn');
         tabButtons.forEach(function(btn) {
             if (btn.getAttribute('onclick').includes(tabName)) {
