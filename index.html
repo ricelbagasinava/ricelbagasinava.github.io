@@ -20,7 +20,6 @@
             border-bottom: 3px solid #e5b869;
         }
 
-        /* Decorative Background Elements */
         .hero-banner::before {
             content: "";
             position: absolute;
@@ -175,6 +174,72 @@
         .tag { background: #e7f3ff; color: #1877f2; padding: 6px 12px; border-radius: 16px; font-size: 0.85rem; font-weight: 600; }
         .cert-card { border-left: 4px solid #1877f2; }
 
+        /* PRICING & PACKAGES GRID */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .package-card {
+            background: #ffffff;
+            border: 2px solid #e4e6eb;
+            border-radius: 10px;
+            padding: 24px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .package-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .package-card.popular {
+            border-color: #1877f2;
+            background: #fafcff;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #1877f2;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        .package-title { font-size: 1.2rem; font-weight: 700; color: #050505; margin-bottom: 6px; }
+        .package-price { font-size: 1.8rem; font-weight: 800; color: #061c38; margin-bottom: 8px; }
+        .package-price span { font-size: 0.9rem; font-weight: 400; color: #65676b; }
+        .package-desc { font-size: 0.88rem; color: #65676b; margin-bottom: 18px; line-height: 1.4; }
+
+        .package-features { list-style: none; padding-left: 0; margin-bottom: 22px; }
+        .package-features li { font-size: 0.88rem; color: #4b4f56; padding-left: 22px; position: relative; margin-bottom: 8px; }
+        .package-features li::before { content: "✓"; position: absolute; left: 0; color: #1877f2; font-weight: bold; }
+
+        .btn-package {
+            display: block;
+            text-align: center;
+            background: #1877f2;
+            color: #ffffff;
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .btn-package:hover { background: #166fe5; text-decoration: none; }
+
         /* PROBLEM / VALUE PROPOSITION CARD */
         .value-card {
             background: #f0f7ff;
@@ -236,7 +301,7 @@
     <!-- NAVIGATION TABS -->
     <div class="nav-tabs">
         <button class="tab-btn active" onclick="openTab('about')">About Me</button>
-        <button class="tab-btn" onclick="openTab('services')">Services Offered</button>
+        <button class="tab-btn" onclick="openTab('services')">Services & Packages</button>
         <button class="tab-btn" onclick="openTab('certifications')">Certifications</button>
         <button class="tab-btn" onclick="openTab('skills')">Skills & Tech Stack</button>
         <button class="tab-btn" onclick="openTab('experience')">Work Experience</button>
@@ -291,36 +356,76 @@
             </div>
         </div>
 
-        <!-- SERVICES OFFERED -->
+        <!-- SERVICES & PACKAGES OFFERED -->
         <div id="services" class="tab-content">
-            <h2 style="margin-bottom: 15px;">Services I Offer</h2>
+            <h2 style="margin-bottom: 10px;">Monthly Bookkeeping Packages</h2>
+            <p style="color: #65676b; margin-bottom: 20px;">Tailored financial management solutions designed for small businesses and growing entrepreneurs.</p>
             
+            <div class="packages-grid">
+                
+                <!-- STARTER PACKAGE -->
+                <div class="package-card">
+                    <div>
+                        <div class="package-title">Starter Package</div>
+                        <div class="package-price">$300 <span>/ month</span></div>
+                        <div class="package-desc">Best for solopreneurs & small startups with low transaction volume.</div>
+                        <ul class="package-features">
+                            <li>Up to 75 bank & credit card transactions categorized</li>
+                            <li>Reconcile up to 2 Bank / Credit Card accounts</li>
+                            <li>Invoicing & Accounts Receivable (up to 10/mo)</li>
+                            <li>Basic Accounts Payable tracking</li>
+                            <li>Monthly Profit & Loss Statement</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:ricel.bagasina.va@gmail.com?subject=Inquiry%20-%20Starter%20Package" class="btn-package">Inquire Starter</a>
+                </div>
+
+                <!-- GROWTH PACKAGE (POPULAR) -->
+                <div class="package-card popular">
+                    <span class="popular-badge">Most Popular</span>
+                    <div>
+                        <div class="package-title">Growth Package</div>
+                        <div class="package-price">$500 <span>/ month</span></div>
+                        <div class="package-desc">Ideal for growing businesses requiring inventory, sales matching & detailed reporting.</div>
+                        <ul class="package-features">
+                            <li>Up to 200 bank & credit card transactions categorized</li>
+                            <li>Reconcile up to 4 accounts (Bank, Credit Card, Merchant)</li>
+                            <li>Sales & Inventory Reconciliation (Daily / Weekly)</li>
+                            <li>Full Accounts Receivable & Accounts Payable management</li>
+                            <li>Monthly P&L, Balance Sheet & Cash Flow Reports</li>
+                            <li>30-minute monthly Zoom financial review call</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:ricel.bagasina.va@gmail.com?subject=Inquiry%20-%20Growth%20Package" class="btn-package">Inquire Growth</a>
+                </div>
+
+                <!-- CLEANUP PACKAGE -->
+                <div class="package-card">
+                    <div>
+                        <div class="package-title">Catch-Up / Clean-Up</div>
+                        <div class="package-price">Custom <span>/ project</span></div>
+                        <div class="package-desc">One-time project to fix un-reconciled statements & bring books up to date.</div>
+                        <ul class="package-features">
+                            <li>Full audit of historical transactions</li>
+                            <li>Categorize unmapped past expenses & deposits</li>
+                            <li>Reconcile all overdue bank statements</li>
+                            <li>Bring QuickBooks / Xero audit-ready for taxes</li>
+                        </ul>
+                    </div>
+                    <a href="mailto:ricel.bagasina.va@gmail.com?subject=Inquiry%20-%20Catch-Up%20Clean-Up" class="btn-package">Request Quote</a>
+                </div>
+
+            </div>
+
+            <h3 style="margin-bottom: 12px; color: #1c1e21;">Core Bookkeeping Capabilities</h3>
             <div class="card">
-                <h3>1. Daily & Operational Bookkeeping</h3>
+                <h3>Operational Bookkeeping & Reconciliation</h3>
                 <ul>
                     <li>Recording daily financial transactions & categorization</li>
                     <li>Invoicing & Accounts Receivable (AR) management</li>
                     <li>Vendor payment management & Accounts Payable (AP) tracking</li>
-                    <li>Expense tracking, categorization, and receipt management</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>2. Reconciliations & Account Maintenance</h3>
-                <ul>
-                    <li>Bank & credit card statement reconciliations</li>
-                    <li>Sales, cash, and inventory reconciliations</li>
-                    <li>Historical bank account record cleanup & maintenance</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>3. Financial Reporting & Compliance Support</h3>
-                <ul>
-                    <li>Generating Profit & Loss (P&L) and Cash Flow statements</li>
-                    <li>Preparing monthly financial summary reports</li>
-                    <li>Payroll processing support</li>
-                    <li>Tax document preparation support</li>
+                    <li>Expense tracking, receipt management & documentation</li>
+                    <li>Bank & merchant account reconciliations (PayPal/Stripe)</li>
                 </ul>
             </div>
         </div>
